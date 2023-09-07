@@ -1,3 +1,5 @@
+  @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -10,6 +12,7 @@ body {
   background:#C3B299;
   display: flex;
   flex-direction: column;
+  font-family: 'Alkatra', cursive;
 }
 
 .search-container {
@@ -23,14 +26,24 @@ body {
 }
 
 input {
+  font-family: 'Alkatra', cursive;
+  color: #523249;
   background-color: #DBEBC0;
   padding: 10px;
-  margin: 5px auto;
+  margin: 10px 1px;
   border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(245, 245, 186);
+}
+
+.search-btn {
+  cursor: pointer;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
@@ -46,7 +59,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 25px;
 }
 
 img {
@@ -61,10 +74,16 @@ ul {
 }
 
 li {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
+nav a, 
+.superhero-link {
+  text-decoration: none;
+  color: #815355;
+  cursor: pointer;
+}
 
 .navbar-container {
   background-color: #815355;
@@ -76,16 +95,20 @@ li {
 nav {
   display: flex;
   justify-content: space-around;
-  text-decoration: none;
-  color: #C3B299;
   margin: 0 20px;
   font-size: 30px;
 }
 
+nav a {
+  color: #C3B299;
+}
+
 .active {
-  text-decoration: underline;
+  text-decoration: none;
   color: #DBEBC0;
 }
+
+
 
 .home-container {
   display: flex;
@@ -95,7 +118,24 @@ nav {
 }
 
 button {
+  font-family: 'Alkatra', cursive;
+  color: #523249;
   padding: 10px;
   border-radius: 10px;
   background-color: #DBEBC0;
+  font-size: 15px;
+  max-width: 400px;
+  margin: 2vh auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #CBD4C2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+button:hover,
+.search-btn:hover {
+  color: #DBEBC0;
+  background-color: #523249;
 }

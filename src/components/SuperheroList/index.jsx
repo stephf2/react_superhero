@@ -8,7 +8,7 @@ const SuperheroList = ({superheros}) => {
       <ul>
         {superheros.map((superhero) => (
           <li key={superhero.id}>
-            <Link to={`/superhero/${superhero.id}`}>{superhero.name}</Link>
+            <Link className='superhero-link' to={`/superhero/${superhero.id}`}>{superhero.name}</Link>
           </li>
         ))}
       </ul>

@@ -27,7 +27,7 @@ const SearchForm = ({ getSuperhero }) => {
         placeholder='Search for a superhero'
         required
       />
-      <input type="submit" value="Search" />
+      <input className='search-btn' type="submit" value="Search" />
     </form>
   )
 }

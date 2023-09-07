@@ -10,7 +10,7 @@ const Superhero = () => {
   useEffect(() => {
     async function getHeroData() {
       try {
-        const response = await axios.get(`https://www.superheroapi.com/api.php/access-token/${id}`)
+        const response = await axios.get(`https://www.superheroapi.com/api.php/3724934554401064/${id}`)
         setSuperhero(response.data)
       } catch (error) {
         console.error('Error getting hero data:', error)
