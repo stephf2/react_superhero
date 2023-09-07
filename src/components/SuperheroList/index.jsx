@@ -2,6 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SuperheroList = ({superheros}) => {
+
+  if (!superheros || superheros.length === 0) {
+    return (
+      <>
+      <div className="superhero-list">
+        <p>No superhero found with this name</p>
+      </div>
+      </>
+    )
+  }
+
   return (
     <div className="superhero-list">
       <h2>Search Results:</h2>

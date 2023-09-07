@@ -1,54 +1,48 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
+import { SuperheroItem } from '../../components'
 
 const Superhero = () => {
   const { id } = useParams()
-  const [superhero, setSuperhero] = useState(null);
+  const [superhero, setSuperhero] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
   
   useEffect(() => {
     async function getHeroData() {
       try {
         const response = await axios.get(`https://www.superheroapi.com/api.php/3724934554401064/${id}`)
         setSuperhero(response.data)
-      } catch (error) {
-        console.error('Error getting hero data:', error)
+        setLoading(false)
+        setError('')
+      } catch (err) {
+        setLoading(false)
+        setError(err.message)
       }
     }
 
     if (id) {
-      getHeroData();
+      getHeroData()
     }
-  }, [id]);
+  }, [id])
 
+  const errorOrsuperhero = error? 
+    (  
+      <>
+      Error getting superhero data, please refresh page 
+      <Link to="/search" style={{textDecoration:'none', cursor:'pointer', fontSize:'20px' }}> &#8594; Back to search page</Link>
+      </>
+    )
+    : <SuperheroItem superhero={superhero}/>
 
   return (
     <>
-    <div className='superhero-container'>
-      <div>
-        {superhero ? (
-          <>
-            <h2>{superhero.name}</h2>
-            <img src={superhero.image.url} alt={`Image of ${superhero.name}`} />
-            {/* <p>Power states - strength: {superhero.powerstats.strength}</p> */}
-            <p>Power Stats:</p>
-            <ul>
-              {Object.entries(superhero.powerstats).map(([stat, value]) => (
-                <li key={stat}>
-                  {`${stat.charAt(0).toUpperCase() + stat.slice(1)}: ${value}`}
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <p>Loading hero data...</p>
-        )}
-        <Link to="/search">
-            <button>Back to Search</button>
-        </Link>
+      <div className='superhero-container'>   
+        {loading? <p>Loading superhero data...</p> : errorOrsuperhero}
       </div>
-    </div>
     </>
   )
 }
