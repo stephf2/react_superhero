@@ -6,8 +6,8 @@ body {
   margin: 0 auto;
   line-height: 1.6;
   font-size: 24px;
-  color: #2B061E;
-  background:#f3f7d4;
+  color: #523249;
+  background:#C3B299;
   display: flex;
   flex-direction: column;
 }
@@ -17,15 +17,16 @@ body {
   margin: 5vh auto;
   padding: 20px;
   text-align: center;
-  background-color: #fbffe6;
+  background-color: #CBD4C2;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 input {
+  background-color: #DBEBC0;
   padding: 10px;
   margin: 5px auto;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 h1 {
@@ -39,7 +40,7 @@ h1 {
   margin: 5vh auto;
   padding: 20px;
   text-align: center;
-  background-color: #fbffe6;
+  background-color: #CBD4C2;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -66,27 +67,24 @@ li {
 
 
 .navbar-container {
-  background-color: #eefdb6;
+  background-color: #815355;
   color: #fff;
-  padding: 25px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
-}
-
-NavLink {
   text-decoration: none;
-  color: #fff;
+  color: #C3B299;
   margin: 0 20px;
-  font-size: 16px;
+  font-size: 30px;
 }
 
 .active {
   text-decoration: underline;
-  color: aqua;
+  color: #DBEBC0;
 }
 
 .home-container {
@@ -97,7 +95,7 @@ NavLink {
 }
 
 button {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #eefdb6;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #DBEBC0;
 }
