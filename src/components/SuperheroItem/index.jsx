@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSuperhero } from '../../contexts/superhero'
 
-const SuperheroItem = ({ superhero }) => {
+const SuperheroItem = () => {
+  const { superhero } = useSuperhero()
   return (
     <>
       <h2>{superhero.name}</h2>

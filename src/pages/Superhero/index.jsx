@@ -4,10 +4,12 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import { SuperheroItem } from '../../components'
+import { useSuperhero } from '../../contexts/superhero'
 
 const Superhero = () => {
   const { id } = useParams()
-  const [superhero, setSuperhero] = useState(null)
+  const {superhero, setSuperhero} = useSuperhero()
+  // const [superhero, setSuperhero] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   
@@ -36,7 +38,7 @@ const Superhero = () => {
       <Link to="/search" style={{textDecoration:'none', cursor:'pointer', fontSize:'20px' }}> &#8594; Back to search page</Link>
       </>
     )
-    : <SuperheroItem superhero={superhero}/>
+    : <SuperheroItem/>
 
   return (
     <>
