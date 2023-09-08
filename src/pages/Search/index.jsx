@@ -11,10 +11,13 @@ const Search = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
+  const accessToken = import.meta.env.VITE_API_KEY
+
+
   useEffect(() => {
     async function getData() {
       try {
-        const response = await axios.get(`https://www.superheroapi.com/api.php/access-token/search/${search.toLowerCase()}`)
+        const response = await axios.get(`https://www.superheroapi.com/api.php/${accessToken}/search/${search.toLowerCase()}`)
         setSuperheros(response.data.results)
         setLoading(false)
         setSearch('')

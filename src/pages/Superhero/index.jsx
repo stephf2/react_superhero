@@ -12,11 +12,13 @@ const Superhero = () => {
   // const [superhero, setSuperhero] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+
+  const accessToken = import.meta.env.VITE_API_KEY
   
   useEffect(() => {
     async function getHeroData() {
       try {
-        const response = await axios.get(`https://www.superheroapi.com/api.php/access-token/${id}`)
+        const response = await axios.get(`https://www.superheroapi.com/api.php/${accessToken}/${id}`)
         setSuperhero(response.data)
         setLoading(false)
         setError('')
