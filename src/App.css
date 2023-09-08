@@ -17,7 +17,7 @@ body {
 
 .search-container {
   max-width: 600px;
-  margin: 5vh auto;
+  margin: 10vh auto;
   padding: 20px;
   text-align: center;
   background-color: #CBD4C2;
@@ -35,7 +35,7 @@ input {
   font-size: 20px;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgb(245, 245, 186);
+  box-shadow: 0 0 10px #DBEBC0;
 }
 
 .search-btn {
@@ -49,23 +49,39 @@ h1 {
 
 
 .superhero-container {
-  max-width: 400px;
+  max-width: 70vw;
   margin: 5vh auto;
   padding: 20px;
   text-align: center;
   background-color: #CBD4C2;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
 }
 
-h2 {
-  font-size: 25px;
+.superhero-container img {
+  max-width: 50%;
+  margin: 20px 50px 20px 20px; 
+  border-radius: 10px;
+  box-shadow: 0.8em 0.8em #DBEBC0;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  margin: 20px 0;
+.superhero-info {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+  margin: 20px;
+}
+
+.superhero-info h2 {
+  font-size: 50px;
+  margin: 0 auto;
+}
+.superhero-info p {
+  margin-bottom:0;
 }
 
 ul {
@@ -73,9 +89,14 @@ ul {
   padding: 0;
 }
 
-li {
+.superhero-info li {
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+
+h2 {
+  font-size: 25px;
 }
 
 nav a, 
@@ -107,8 +128,6 @@ nav a {
   text-decoration: none;
   color: #DBEBC0;
 }
-
-
 
 .home-container {
   display: flex;

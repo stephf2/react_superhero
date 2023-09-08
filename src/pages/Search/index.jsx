@@ -14,7 +14,7 @@ const Search = () => {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await axios.get(`https://www.superheroapi.com/api.php/3724934554401064/search/${search.toLowerCase()}`)
+        const response = await axios.get(`https://www.superheroapi.com/api.php/access-token/search/${search.toLowerCase()}`)
         setSuperheros(response.data.results)
         setLoading(false)
         setSearch('')
