@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { SearchForm, SuperheroList } from '../../components'
+import { useSearch } from '../../contexts'
 
 const Search = () => {
-  const [search, setSearch] = useState('')
-  const [superheros, setSuperheros] = useState([])
+  const { search, setSearch, superheros, setSuperheros } = useSearch();
+
+  // const [search, setSearch] = useState('')
+  // const [superheros, setSuperheros] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -31,13 +34,13 @@ const Search = () => {
     
   const errorOrsuperheroList = error? 
   'Error getting superhero data, please refresh page' 
-  : <SuperheroList superheros={superheros}/>
+  : <SuperheroList/>
 
   return (
     <>
     <div className='search-container'>
       <h1>Search a Superhero</h1>
-      <SearchForm getSuperhero={setSearch}/>
+      <SearchForm/>
       {loading? search && <p>Loading...</p> : errorOrsuperheroList}
     </div>
     </>

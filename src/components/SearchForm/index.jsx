@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { useSearch } from '../../contexts'
 
-const SearchForm = ({ getSuperhero }) => {
-  const [inputText, setInputText] = useState('')
+const SearchForm = () => {
+  const { setSearch, inputText, setInputText } = useSearch()
 
   function handleInput(e) {
     setInputText(e.target.value)
@@ -9,7 +10,7 @@ const SearchForm = ({ getSuperhero }) => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    getSuperhero(inputText)
+    setSearch(inputText)
     setInputText('')
   }
 

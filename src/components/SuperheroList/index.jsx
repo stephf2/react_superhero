@@ -1,13 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSearch } from '../../contexts'
 
-const SuperheroList = ({superheros}) => {
+
+const SuperheroList = () => {
+  const { superheros } = useSearch();
+
 
   if (!superheros || superheros.length === 0) {
     return (
       <>
       <div className="superhero-list">
-        <p>No superhero found with this name</p>
+        No superhero found with this name 
       </div>
       </>
     )
